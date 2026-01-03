@@ -15,10 +15,6 @@ const MAX_HOURS = 23;
 const MAX_MINUTES = 59;
 
 
-// Layouts (only for standard time, which is fixed; base time layout is dynamic, depending on the base)
-const STANDARD_TIME_LAYOUT_ID = "StandardTimeLayout";
-
-
 // Fonts
 const HOUR_FONT = Application.loadResource(Rez.Fonts.HourFont);
 const MINUTES_FONT = Application.loadResource(Rez.Fonts.MinutesFont);
@@ -26,14 +22,18 @@ const SECONDS_FONT = Application.loadResource(Rez.Fonts.SecondsFont);
 
 
 // Settings
-const CUSTOMIZE_MENU_TITLE = Application.loadResource(Rez.Strings.Time);
+const CUSTOMIZE_MENU_TITLE = Application.loadResource(Rez.Strings.CustomizeMenuTitle);
 
-const STANDARD_TIME_LABEL = Application.loadResource(Rez.Strings.StandardTimeMenuTitle);
-const STANDARD_TIME_PROPERTY = "ShowStandardTime";
-const STANDARD_TIME_MODE_DEFAULT = true;
+const SHOW_DIGITS_MENU_LABEL = Application.loadResource(Rez.Strings.ShowDigitsMenuTitle);
+const SHOW_DIGITS_PROPERTY = "ShowDigits";
+const SHOW_DIGITS_DEFAULT = true;
 
-const MULTI_OPTION_LABEL = Application.loadResource(Rez.Strings.MultiOptionMenuTitle);
-const MULTI_OPTION_PROPERTY = "MultiOption";
-const MULTI_OPTION_DEFAULT = 1;
+const LAYOUT_MENU_LABEL = Application.loadResource(Rez.Strings.LayoutMenuTitle);
+const LAYOUT_PROPERTY = "Layout";
+const LAYOUT_DEFAULT = 0;
+const LAYOUT_OPTIONS = Application.loadResource(Rez.JsonData.LayoutOptions);
 
-const MULTI_OPTION_NAMES = Application.loadResource(Rez.JsonData.MultiOptionValues) as Array<String>;
+const THEME_MENU_LABEL = Application.loadResource(Rez.Strings.ThemeMenuTitle);
+const THEME_PROPERTY = "Theme";
+const THEME_DEFAULT = 0;
+const THEME_OPTIONS = Application.loadResource(Rez.JsonData.ThemeOptions);

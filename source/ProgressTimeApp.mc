@@ -2,20 +2,14 @@ using Toybox.Application;
 using Toybox.WatchUi;
 
 
-class TimeApp extends Application.AppBase {
+class ProgressTimeApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
     }
 
-    function onStart(state) {
-    }
-
-    function onStop(state) {
-    }
-
     function getInitialView() {
-        return [ new TimeView() ];
+        return [ new ProgressTimeView() ];
     }
 
     function onSettingsChanged() as Void {
@@ -23,7 +17,7 @@ class TimeApp extends Application.AppBase {
     }
 
     function getSettingsView() {
-        return [ new TimeSettingsMenu(), new TimeSettingsDelegate() ];
+        return [ new ProgressTimeMenu(), new ProgressTimeDelegate() ];
     }
 
 }
