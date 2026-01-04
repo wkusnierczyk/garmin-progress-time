@@ -1,0 +1,41 @@
+{
+    "collections": [
+        {
+            "id": "mono",
+            "name": "Monochrome",
+            "default": "mono",
+            "themes": [
+                "mono"
+            ]
+        }
+    ],
+    "defaults": {
+        "collection": "mono"
+    },
+    "themes": [
+        {
+            "colors": {
+                "hours": {
+                    "elapsed": "FFFFFF",
+                    "outline": "FFFFFF",
+                    "remaining": "BBBBBB",
+                    "font": "000000"
+                },
+                "minutes": {
+                    "elapsed": "DDDDDD",
+                    "outline": "DDDDDD",
+                    "remaining": "999999",
+                    "font": "000000"
+                },
+                "seconds": {
+                    "elapsed": "BBBBBB",
+                    "outline": "BBBBBB",
+                    "remaining": "777777",
+                    "font": "000000"
+                }
+            },
+            "id": "mono",
+            "name": "Monochrome"
+        }
+    ]
+}
