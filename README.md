@@ -38,7 +38,7 @@ The Progress Time watch face supports the following features:
 |-|:-|
 |![](resources/graphics/ProgressTime2.png)| **Progress bars**<br/> Three progress bars indicating the passage of time.|
 |![](resources/graphics/ProgressTime1.png)| **Time digits**<br/> The progress bars may be complemented with digits showing the hour, minutes, and seconds, superimposed over the right end of each bar. A customization setting allows the user to toggle the digits on and off.|
-
+|![](resources/graphics/ProgressTime3.png)| **Layouts**<br/> The watch face supports horizontal and vertical progress bar layouts. A customization setting allows the user to toggle between the modes.|
 
 ## Fonts
 

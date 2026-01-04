@@ -9,16 +9,16 @@
     <string id="LayoutMenuTitle">Layout</string>
     <string id="LayoutHorizontal">Horizontal</string>
     <string id="LayoutVertical">Vertical</string>
-    <string id="LayoutDiagonal">Diagonal</string>
+    <!-- <string id="LayoutDiagonal">Diagonal</string> -->
     <jsonData id="LayoutOptions">[
         "Horizontal",
-        "Vertical",
-        "Diagonal"
+        "Vertical"
+        <!-- "Diagonal" -->
     ]</jsonData>
 
-    <string id="ThemeMenuTitle">Layout</string>
-    <string id="ThemeMonochrome">Horizontal</string>
-    <string id="ThemeSoftOrange">Vertical</string>
+    <string id="ThemeMenuTitle">Theme</string>
+    <string id="ThemeMonochrome">Monochrome</string>
+    <string id="ThemeSoftOrange">SoftOrange</string>
     <jsonData id="ThemeOptions">[
         "Monochrome",
         "SoftOrange"

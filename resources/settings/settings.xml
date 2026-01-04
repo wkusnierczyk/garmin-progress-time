@@ -6,16 +6,16 @@
 
     <setting propertyKey="@Properties.Layout" title="@Strings.LayoutMenuTitle">
         <settingConfig type="list">
-            <listEntry value="1">@Strings.LayoutHorizontal</listEntry>
-            <listEntry value="2">@Strings.LayoutVertical</listEntry>
-            <listEntry value="3">@Strings.LayoutDiagonal</listEntry>
+            <listEntry value="0">@Strings.LayoutHorizontal</listEntry>
+            <listEntry value="1">@Strings.LayoutVertical</listEntry>
+            <!-- <listEntry value="3">@Strings.LayoutDiagonal</listEntry> -->
         </settingConfig>
     </setting>
 
     <setting propertyKey="@Properties.Theme" title="@Strings.ThemeMenuTitle">
         <settingConfig type="list">
-            <listEntry value="1">@Strings.ThemeMonochrome</listEntry>
-            <listEntry value="2">@Strings.ThemeSoftOrange</listEntry>
+            <listEntry value="0">@Strings.ThemeMonochrome</listEntry>
+            <listEntry value="1">@Strings.ThemeSoftOrange</listEntry>
         </settingConfig>
     </setting>
 
