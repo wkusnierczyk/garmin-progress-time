@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
-    <iq:application id="b23027e8-51f2-4847-b13e-4ff6ff336053" type="watchface" name="@Strings.AppName" entry="ProgressTimeApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="1.2.0">
+    <iq:application id="b23027e8-51f2-4847-b13e-4ff6ff336053" type="watchface" name="@Strings.AppName" entry="ProgressApp" launcherIcon="@Drawables.LauncherIcon" minApiLevel="1.2.0">
         <iq:products>
             <iq:product id="descentg1"/>
             <iq:product id="descentg2"/>
