@@ -60,7 +60,7 @@ class ProgressTimeView extends WatchUi.WatchFace {
 
             .withLength(progressWidth)
             .withBreadth(progressHeight)
-            .withDigits()
+            .toggleDigits(withDigits)
             
             // hour
             .at(boxX, boxY)
