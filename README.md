@@ -1,62 +1,50 @@
-# Garmin {blank:ucname} Time
+# Garmin Progress Time
 
-A minimalist, elegant, nerdy, typography-focused Garmin Connect IQ watch face that displays the current time {blank:short-description}.
+A minimalist, elegant, nerdy, typography-focused Garmin Connect IQ watch face that displays the current time as progress bars.
 
-![{blank:ucname} Time](resources/graphics/{blank:ucname}TimeHero-small.png)
+![Progress Time](resources/graphics/ProgressTimeHero-small.png)
 
 Available from [Garmin Connect IQ Developer portal](https://apps.garmin.com/apps/{blank:app-id}) or through the Connect IQ mobile app.
 
 > **Note**  
-> {blank:ucname} Time is part of a [collection of unconventional Garmin watch faces](https://github.com/wkusnierczyk/garmin-watch-faces). It has been developed for fun, as a proof of concept, and as a learning experience.
+> Progress Time is part of a [collection of unconventional Garmin watch faces](https://github.com/wkusnierczyk/garmin-watch-faces). It has been developed for fun, as a proof of concept, and as a learning experience.
 > It is shared _as is_ as an open source project, with no commitment to long term maintenance and further feature development.
 >
-> Please use [issues](https://github.com/wkusnierczyk/garmin-{blank:lcname}-time/issues) to provide bug reports or feature requests.  
-> Please use [discussions](https://github.com/wkusnierczyk/garmin-{blank:lcname}-time/discussions) for any other comments.
+> Please use [issues](https://github.com/wkusnierczyk/garmin-progress-time/issues) to provide bug reports or feature requests.  
+> Please use [discussions](https://github.com/wkusnierczyk/garmin-progress-time/discussions) for any other comments.
 >
 > All feedback is wholeheartedly welcome.
 
 ## Contents
 
-* [{blank:ucname} time](#{blank:lcname}-time)
+* [Progress time](#progress-time)
 * [Features](#features)
 * [Fonts](#fonts)
 * [Build, test, deploy](#build-test-deploy)
 
-## {blank:ucname} time
+## Progress time
 
-{blank:description}
+Progress Time displays the curent time as three progress bars, one for each of the hour, minutes, and seconds.
+The bars are vertically stacked above each other, with the hour at the top and seconds at the bottom.
+The bars show progress of time as a colored stripe, representing the fraction of time that passed withing the specific part of the time (hour out of 12, minutes out of 60, seconds out of 60).
+The stripe is trailed by a stripe in a different, dimmer color, representing the remaining time.
+
 
 ## Features
 
-The {blank:ucname} Time watch face supports the following features:
+The Progress Time watch face supports the following features:
 
 |Screenshot|Description|
 |-|:-|
-{blank:features}
+|![]()| **Progress bars**<br/> Three progress bars indicating the passage of time.|
+|![]()| **Time digits**<br/> The progress bars may be complemented with digits showing the hour, minutes, and seconds, superimposed over the right end of each bar. A customization setting allows the user to toggle the digits on and off.|
+
 
 ## Fonts
 
-The {blank:ucname} Time watch face uses custom fonts:
+In the initial release, Progress Time uses the builtin `FONT_SMALL` font.
+Future releases may include custom fonts.
 
-{blank:fonts}
-
-> The development of Garmin watch faces motivated the implementation of two useful tools:
-> * A TTF to FNT+PNG converter ([`ttf2bmp`](https://github.com/wkusnierczyk/ttf2bmp)).  
-> Garmin watches use non-scalable fixed-size bitmap fonts, and cannot handle variable size True Type fonts directly.
-> * An font scaler automation tool ([`garmin-font-scaler`](https://github.com/wkusnierczyk/garmin-font-scaler)).  
-> Garmin watches come in a variety of shapes and resolutions, and bitmap fonts need to be scaled for each device proportionally to its resolution.
-
-The font development proceeded as follows:
-
-* The fonts were downloaded from [Google Fonts](https://fonts.google.com/) as True Type  (`.ttf`) fonts.
-* The fonts were converted to bitmaps as `.fnt` and `.png` pairs using the open source command-line [`ttf2bmp`](https://github.com/wkusnierczyk/ttf2bmp) converter.
-* The font sizes were established to match the Garmin Fenix 7X Solar watch 280x280 pixel screen resolution.
-* The fonts were then scaled proportionally to match other screen sizes available on Garmin watches using the [`garmin-font-scaler`](https://github.com/wkusnierczyk/garmin-font-scaler) tool.
-
-
-The table below lists all font sizes provided for the supported screen resolutions.
-
-{blank:font-table}
 
 ## Build, test, deploy
 
