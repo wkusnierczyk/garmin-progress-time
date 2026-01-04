@@ -2,7 +2,7 @@
 
 A minimalist, elegant, nerdy, typography-focused Garmin Connect IQ watch face that displays the current time as progress bars.
 
-![Progress Time](resources/graphics/ProgressTimeHero-small.png)
+![Progress Time](resources/graphics/ProgressTimeHero2-small.png)
 
 Available from [Garmin Connect IQ Developer portal](https://apps.garmin.com/apps/{blank:app-id}) or through the Connect IQ mobile app.
 
