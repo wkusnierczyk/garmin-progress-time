@@ -179,6 +179,7 @@ class HorizontalProgressChart extends ProgressChart {
         var progressBar = new HorizontalProgressBar()
             .withLength(progressWidth)
             .withBreadth(progressHeight)
+            .withOutline()
             .toggleDigits(_withDigits);
 
         for (var i = 0; i < _barCount; ++i) {
