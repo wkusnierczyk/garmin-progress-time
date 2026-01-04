@@ -30,7 +30,11 @@ class ProgressDelegate extends WatchUi.Menu2InputDelegate {
         if (id.equals(SHOW_DIGITS_PROPERTY) && item instanceof WatchUi.ToggleMenuItem) {
             Properties.setValue(SHOW_DIGITS_PROPERTY, item.isEnabled());
         }
-        
+
+        if (id.equals(LAYOUT_PROPERTY) && item instanceof WatchUi.ToggleMenuItem) {
+            Properties.setValue(LAYOUT_PROPERTY, item.isEnabled());
+        }
+
     }
 
     /**
