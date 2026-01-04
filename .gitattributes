@@ -1,8 +1,8 @@
-resources/graphics/ProgressTimeHero-small.png filter=lfs diff=lfs merge=lfs -text
-resources/graphics/ProgressTimeHero.png filter=lfs diff=lfs merge=lfs -text
-resources/fonts/Ubuntu-Regular.ttf filter=lfs diff=lfs merge=lfs -text
-resources/fonts/Ubuntu-Regular-30.png filter=lfs diff=lfs merge=lfs -text
+resources/graphics/ProgressTimeHero2.png filter=lfs diff=lfs merge=lfs -text
 resources/graphics/ProgressTime1.png filter=lfs diff=lfs merge=lfs -text
 resources/graphics/ProgressTime2.png filter=lfs diff=lfs merge=lfs -text
-resources/graphics/ProgressTimeCapture.png filter=lfs diff=lfs merge=lfs -text
 resources/graphics/ProgressTime3.png filter=lfs diff=lfs merge=lfs -text
+resources/graphics/ProgressTimeCapture.png filter=lfs diff=lfs merge=lfs -text
+resources/graphics/ProgressTimeHero-small.png filter=lfs diff=lfs merge=lfs -text
+resources/graphics/ProgressTimeHero.png filter=lfs diff=lfs merge=lfs -text
+resources/graphics/ProgressTimeHero2-small.png filter=lfs diff=lfs merge=lfs -text
