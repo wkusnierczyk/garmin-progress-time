@@ -17,8 +17,7 @@ class ProgressBar {
     hidden static const DEFAULT_WITH_DIGITS = false;
     hidden static const DEFAULT_DIGITS_FONT = Graphics.FONT_SMALL;
     hidden static const DEFAULT_DIGITS_COLOR = Graphics.COLOR_BLACK;
-    hidden static const DEFAULT_DIGITS_FORMAT = "%02d";
-    hidden static const DIGITS_SPACING_FACTOR = 0.25;
+    hidden static const DEFAULT_DIGITS_FORMAT = "%2d";
 
 
     hidden var _atX as Number;
@@ -36,7 +35,7 @@ class ProgressBar {
     hidden var _digitsFormat as String = DEFAULT_DIGITS_FORMAT;
 
 
-    function initialize() {
+    hidden function initialize() {
         var settings = System.getDeviceSettings();
         _width = (DEFAULT_SCREEN_FRACTION_WIDTH * settings.screenWidth).toNumber();
         _height = (DEFAULT_SCREEN_FRACTION_HEIGHT * settings.screenHeight).toNumber();
@@ -120,6 +119,8 @@ class ProgressBar {
 
 class HorizontalProgressBar extends ProgressBar {
 
+    private static const HORIZONTAL_DIGITS_SPACING_FACTOR = 0.25;
+
     function initialize() {
         ProgressBar.initialize();
     }
@@ -147,7 +148,7 @@ class HorizontalProgressBar extends ProgressBar {
 
         if (_withDigits) {
             var digits = _elapsed.format(_digitsFormat);
-            var digitsX = (_atX + _width - DIGITS_SPACING_FACTOR * _height).toNumber();
+            var digitsX = (_atX + _width - HORIZONTAL_DIGITS_SPACING_FACTOR * _height).toNumber();
             var digitsY = _atY + _height / 2;
             dc.setColor(_digitsColor, Graphics.COLOR_TRANSPARENT);
             dc.drawText(digitsX, digitsY, _digitsFont, digits, Graphics.TEXT_JUSTIFY_RIGHT | Graphics.TEXT_JUSTIFY_VCENTER);
@@ -160,6 +161,8 @@ class HorizontalProgressBar extends ProgressBar {
 }
 
 class VerticalProgressBar extends ProgressBar {
+
+    private static const VERTICAL_DIGITS_SPACING_FACTOR = 0.5;
 
     function initialize() {
         ProgressBar.initialize();
@@ -184,12 +187,12 @@ class VerticalProgressBar extends ProgressBar {
         // Draw the elapsed part
         var progressHeight = (1.0 * _height * _elapsed / _total).toNumber();
         dc.setColor(_elapsedColor, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(_atX, _atY - _height + progressHeight, _width, progressHeight, _radius);
+        dc.fillRoundedRectangle(_atX, _atY + _height - progressHeight, _width, progressHeight, _radius);
 
         if (_withDigits) {
             var digits = _elapsed.format(_digitsFormat);
             var digitsX = _atX + _width / 2;
-            var digitsY = (_atY + _height - DIGITS_SPACING_FACTOR * _width).toNumber();
+            var digitsY = (_atY + _height - VERTICAL_DIGITS_SPACING_FACTOR * _width).toNumber();
             dc.setColor(_digitsColor, Graphics.COLOR_TRANSPARENT);
             dc.drawText(digitsX, digitsY, _digitsFont, digits, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         }

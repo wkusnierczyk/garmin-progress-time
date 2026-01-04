@@ -31,7 +31,7 @@ const SHOW_DIGITS_DEFAULT = true;
 const LAYOUT_MENU_LABEL = Application.loadResource(Rez.Strings.LayoutMenuTitle);
 const LAYOUT_PROPERTY = "Layout";
 const LAYOUT_DEFAULT = 0;
-const LAYOUT_OPTIONS = Application.loadResource(Rez.JsonData.LayoutOptions);
+const LAYOUT_OPTIONS as Array = Application.loadResource(Rez.JsonData.LayoutOptions);
 
 const THEME_MENU_LABEL = Application.loadResource(Rez.Strings.ThemeMenuTitle);
 const THEME_PROPERTY = "Theme";

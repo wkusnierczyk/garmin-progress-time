@@ -19,6 +19,15 @@ class ProgressTimeMenu extends WatchUi.Menu2 {
             null
         ));
 
+        var layoutSelection = PropertyUtils.getPropertyElseDefault(LAYOUT_PROPERTY, LAYOUT_DEFAULT);
+        var layoutName = LAYOUT_OPTIONS[layoutSelection];
+        addItem(new WatchUi.MenuItem(
+            LAYOUT_MENU_LABEL, 
+            layoutName, 
+            LAYOUT_PROPERTY, 
+            null
+        ));
+
         // var multiOptionSelection = PropertyUtils.getPropertyElseDefault(MULTI_OPTION_PROPERTY, MULTI_OPTION_DEFAULT);
         // var multiOptoinName = MULTI_OPTION_NAMES[multiOptionSelection];
         // addItem(new WatchUi.MenuItem(
