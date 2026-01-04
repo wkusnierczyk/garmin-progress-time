@@ -13,13 +13,19 @@ import Toybox.Lang;
  */
 class ProgressBar {
 
-    private static const DEFAULT_ELAPSED_COLOR = Graphics.COLOR_WHITE;
-    private static const DEFAULT_REMAINING_COLOR = Graphics.COLOR_LT_GRAY;
     private static const DEFAULT_SCREEN_FRACTION_WIDTH = 0.7;
     private static const DEFAULT_SCREEN_FRACTION_HEIGHT = 0.15;
     private static const DEFAULT_ELAPSED = 50;
     private static const DEFAULT_TOTAL = 100;
     private static const DEFAULT_RADIUS_FRACTION = 0.1;
+    
+    private static const DEFAULT_ELAPSED_COLOR = Graphics.COLOR_WHITE;
+    private static const DEFAULT_REMAINING_COLOR = Graphics.COLOR_LT_GRAY;
+    
+    private static const DEFAULT_WITH_OUTLINE = false;
+    private static const DEFAULT_OUTLINE_COLOR = Graphics.COLOR_LT_GRAY;
+    private static const DEFAULT_OUTLINE_THICKNESS = 2;
+
     private static const DEFAULT_WITH_DIGITS = false;
     private static const DEFAULT_DIGITS_FONT = Graphics.FONT_SMALL;
     private static const DEFAULT_DIGITS_COLOR = Graphics.COLOR_BLACK;
@@ -30,11 +36,14 @@ class ProgressBar {
     hidden var _atY as Number;
     hidden var _width as Number;
     hidden var _height as Number;
-    hidden var _elapsedColor as Graphics.ColorType = DEFAULT_ELAPSED_COLOR;
-    hidden var _remainingColor as Graphics.ColorType = DEFAULT_REMAINING_COLOR;
     hidden var _elapsed as Number = DEFAULT_ELAPSED;
     hidden var _total as Number = DEFAULT_TOTAL;
     hidden var _radius;
+    hidden var _elapsedColor as Graphics.ColorType = DEFAULT_ELAPSED_COLOR;
+    hidden var _remainingColor as Graphics.ColorType = DEFAULT_REMAINING_COLOR;
+    hidden var _withOutline as Boolean = DEFAULT_WITH_OUTLINE;
+    hidden var _outlineColor as Graphics.ColorType = DEFAULT_OUTLINE_COLOR;
+    hidden var _thickness as Number = DEFAULT_OUTLINE_THICKNESS;
     hidden var _withDigits as Boolean = DEFAULT_WITH_DIGITS;
     hidden var _digitsFont as Graphics.FontType= DEFAULT_DIGITS_FONT;
     hidden var _digitsColor as Graphics.ColorType = DEFAULT_DIGITS_COLOR;
@@ -131,6 +140,48 @@ class ProgressBar {
         _total = total;
         return self;
     }
+
+    /**
+     * Enable drawing an outline around the bar.
+     *
+     * @return self for fluent chaining.
+     */
+    function withOutline() as ProgressBar {
+        _withOutline = true;
+        return self;
+    }
+
+    /**
+     * Disable drawing an outline around the bar.
+     *
+     * @return self for fluent chaining.
+     */
+    function withoutOutline() as ProgressBar {
+        _withOutline = false;
+        return self;
+    }   
+
+    /**
+     * Toggle outline drawing on or off.
+     *
+     * @param boolean True to draw an outline, false to hide it.
+     * @return self for fluent chaining.
+     */
+    function toggleOutline(boolean as Boolean) as ProgressBar {
+        _withOutline = boolean;
+        return self;
+    }
+
+    /**
+     * Set the outline color.
+     *
+     * @param color The outline color.
+     * @return self for fluent chaining.
+     */
+    function withOutlineColor(color as Graphics.ColorType) as ProgressBar {
+        _outlineColor = color;
+        return self;
+    }
     
     /**
      * Enable digits display using the current font/color/format.
@@ -206,6 +257,17 @@ class ProgressBar {
      * @return self for fluent chaining.
      */
     function draw(dc as Graphics.Dc) as ProgressBar {
+
+        // Draw the remaining part covering the whole length of the bar
+        dc.setColor(_remainingColor, Graphics.COLOR_TRANSPARENT);
+        dc.fillRoundedRectangle(_atX, _atY, _width, _height, _radius);
+
+        // Draw outline
+        if (_withOutline) {
+            dc.setColor(_outlineColor, Graphics.COLOR_TRANSPARENT);
+            dc.drawRoundedRectangle(_atX, _atY, _width, _height, _radius);
+        }
+
         return self;
     }
 
@@ -256,9 +318,7 @@ class HorizontalProgressBar extends ProgressBar {
      */
     function draw(dc as Graphics.Dc) as ProgressBar {
 
-        // Draw the remaining part covering the whole length of the bar
-        dc.setColor(_remainingColor, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(_atX, _atY, _width, _height, _radius);
+        ProgressBar.draw(dc);
 
         // Draw the elapsed part
         var progressWidth = (1.0 * _width * _elapsed / _total).toNumber();
@@ -323,9 +383,7 @@ class VerticalProgressBar extends ProgressBar {
      */
     function draw(dc as Graphics.Dc) as ProgressBar {
 
-        // Draw the remaining part covering the whole length of the bar
-        dc.setColor(_remainingColor, Graphics.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(_atX, _atY, _width, _height, _radius);
+        ProgressBar.draw(dc);
 
         // Draw the elapsed part
         var progressHeight = (1.0 * _height * _elapsed / _total).toNumber();
