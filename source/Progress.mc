@@ -91,6 +91,11 @@ class ProgressBar {
         return self;
     }
 
+    function toggleDigits(boolean as Boolean) as ProgressBar {
+        _withDigits = boolean;
+        return self;
+    }
+
     function withDigitsFont(font as Graphics.FontType) as ProgressBar {
         _digitsFont = font;
         return self;

@@ -26,6 +26,9 @@ class ProgressTimeView extends WatchUi.WatchFace {
 
     private function _horizontal(dc) {
 
+        // TODO: remove this hack!
+        var withDigits = PropertyUtils.getPropertyElseDefault(SHOW_DIGITS_PROPERTY, SHOW_DIGITS_DEFAULT);
+
         var clockTime = System.getClockTime();
 
         var hour = clockTime.hour;

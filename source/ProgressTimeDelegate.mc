@@ -13,11 +13,11 @@ class ProgressTimeDelegate extends WatchUi.Menu2InputDelegate {
     function onSelect(item) {
 
         var id = item.getId();
-        
-        // if (id.equals(STANDARD_TIME_PROPERTY) && item instanceof WatchUi.ToggleMenuItem) {
-        //     Properties.setValue(STANDARD_TIME_PROPERTY, item.isEnabled());
-        // }
 
+        if (id.equals(SHOW_DIGITS_PROPERTY) && item instanceof WatchUi.ToggleMenuItem) {
+            Properties.setValue(SHOW_DIGITS_PROPERTY, item.isEnabled());
+        }
+        
         // if (id.equals(MULTI_OPTION_PROPERTY) && item instanceof WatchUi.MenuItem) {
         //     var currentOption = PropertyUtils.getPropertyElseDefault(MULTI_OPTION_PROPERTY, MULTI_OPTION_DEFAULT);
         //     var newOption = (currentOption % MULTI_OPTION_NAMES.size()) + 1;
