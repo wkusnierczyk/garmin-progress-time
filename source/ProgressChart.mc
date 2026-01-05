@@ -131,7 +131,11 @@ class ProgressChart {
     function forClock(clock as System.ClockTime) as ProgressChart {
         // TODO: add option for 12/24h time
         withTotalValues([12, 60, 60]);
-        withElapsedValues([clock.hour % 12, clock.min, clock.sec]);
+        var hour = clock.hour % 12;
+        if (hour == 0) {
+            hour = 12;
+        }
+        withElapsedValues([hour, clock.min, clock.sec]);
         _formats = ["%2d", "%02d", "%02d"];
         return self;
     }
