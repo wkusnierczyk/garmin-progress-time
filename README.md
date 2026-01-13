@@ -4,7 +4,7 @@ A minimalist, elegant, nerdy, typography-focused Garmin Connect IQ watch face th
 
 ![Progress Time](resources/graphics/ProgressTimeHero2-small.png)
 
-Available from [Garmin Connect IQ Developer portal](https://apps.garmin.com/apps/{blank:app-id}) or through the Connect IQ mobile app.
+Available from [Garmin Connect IQ Developer portal](https://apps.garmin.com/apps/3b15c811-4194-4863-a22d-21eaaaaaab9b) or through the Connect IQ mobile app.
 
 > **Note**  
 > Progress Time is part of a [collection of unconventional Garmin watch faces](https://github.com/wkusnierczyk/garmin-watch-faces). It has been developed for fun, as a proof of concept, and as a learning experience.
